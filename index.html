@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="js/ajax.js"></script>
+    <title>AJAX</title>
+</head>
+<body>
+    <header class="cabecera_principal">
+        <h1>AJAX</h1>
+    </header>
+    <main class="container">
+        <section class="secciones teoria">
+            <header>
+                <h2>Introducción a Ajax</h2>
+            </header>
+            <div class="bloques bloque_1">
+                <pre>
+                    document.addEventListener('DOMContentLoaded', function() {
+        
+                    });
+                </pre>
+            </div>
+            <div class="bloques bloque_2">
+                <pre>
+                    document.querySelectorAll('message')[0].textContent = "Hola Xurxo";
+                </pre>
+            </div>
+            <div class="bloques bloque_3">
+                <p>
+                    Ahora vams a utilizar <abbr title="Aplication Programming Interfaces">APIs</abbr> o Interfaces de programación de aplicación, que son herramientas que las computadoras utilizan para comunicarse unos con otros.
+                </p>
+                <p>
+                    Muchas APIs web transfieren los datos llamando a JSON. <abbr title="JavaScript Object Notation">JSON</abbr> existe para la <strong>Notación de Objetos en JavaScript</strong>.
+                </p>
+                <p>
+                    La <em>sintaxis</em> de <strong>JSON</strong> es muy similar a la notación de un <em>objeto literal</em> deJavaScript object literal notation. JSON tiene propiedades de objeto y sus correspondientes valores, rodeados con <span class="resaltar">{</span> and a <span class="resaltar">}</span>.
+                </p>
+                <p>
+                    Pero JSON no es un un Objeto es un fichero que transmite bytes y que se recibe como string. Aunque estos datos se pueden convertir en objetos JavaScript con el método <strong class="resaltar">JSON.parse()</strong> y viceversa <strong class="resaltar">JSON.stringify()</strong>
+                </p>
+                <pre>
+                    const req = new XMLHttpRequest();
+                    req.open("GET",'/json/cats.json',true);
+                    req.send();
+                    req.onload = function(){
+                        const json = JSON.parse(req.responseText);
+                        document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
+                    };
+
+                </pre>
+            </div>
+        </section>
+        <section class="secciones ejercicios">
+            <header>
+                <h2>Ejercicios</h2>
+                <div class="message">
+                    <p class="message box">
+                        El mensaje irá aquí
+                      </p>
+                      <p>
+                        <button id="getMessage">
+                         Obtener mensaje
+                        </button>
+                      </p>
+                </div>
+            </header>
+            <div class="bloques bloque_1">
+                   Coloca el script de la página en la sección <em>head</em> de la página y el código del código del presente bloque para que se detecte la carga de página.
+            </div>
+            <div class="bloques bloque_2">
+                Utilizando el método de selección querySelectorAll y aprovechando el evento click del botón cambia el mensaje el texto "El mensaje irá aquí" por "El mensaje está aquí"
+            </div>
+            <div class="bloques bloque_3">
+                Actualice el código para crear y enviar una solicitud "GET"<div class=""></div>Luego haga clic en el botón "Obtener mensaje". 
+                Su función AJAX reemplazará el texto "El mensaje irá aquí" con la salida JSON <strong>sin procesar de la API</strong>.
+            </div>
+        </section>
+    </main>
+</body>
+</html>

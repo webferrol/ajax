@@ -1,0 +1,102 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+:root {
+  font-family: Roboto, sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: white;
+  background-color: black;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#552b08), to(black));
+  background-image: linear-gradient(#552b08, black);
+  background-repeat: no-repeat;
+}
+
+img {
+  width: 100%;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+pre {
+  padding: .5em;
+  white-space: pre-line;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: .5em;
+  -webkit-box-shadow: 0 0 2px 0 black;
+          box-shadow: 0 0 2px 0 black;
+}
+
+.secciones {
+  counter-reset: reseteo;
+}
+
+.secciones abbr {
+  padding: 0 .5em;
+  background-color: #17485c;
+  letter-spacing: .05em;
+  text-decoration: none;
+  cursor: help;
+  border-radius: .5em;
+}
+
+.secciones .bloques {
+  counter-increment: reseteo 1;
+  padding: .5em;
+}
+
+.secciones .bloques::before {
+  content: "Bloque " counter(reseteo) ". ";
+}
+
+.secciones .bloques:nth-child(even) {
+  background-color: rgba(31, 30, 30, 0.5);
+}
+
+.secciones .resaltar {
+  color: black;
+  background-color: #97af80;
+}
+
+div.message {
+  padding: .5em;
+  margin: .5em;
+  color: black;
+  background-color: whitesmoke;
+}
+
+.ejercicios .bloques {
+  margin-bottom: 1em;
+}
+
+#getMessage {
+  color: white;
+  line-height: 3em;
+  border-style: none;
+  background-color: #17485c;
+  border-radius: 1em;
+}
+
+#getMessage:active {
+  outline-style: none;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  gap: 1em;
+  -ms-grid-columns: (minmax(20em, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+}
+/*# sourceMappingURL=style.css.map */
